@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+~$*
+
+# Private filing templates should stay local.
+assets/fixed-submission-template/*.docx
+assets/fixed-submission-template/*.pdf
+assets/fixed-submission-template/application-info.txt
+!assets/fixed-submission-template/README.md
+!assets/fixed-submission-template/application-info.example.txt

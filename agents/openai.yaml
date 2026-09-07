@@ -1,0 +1,4 @@
+interface:
+  display_name: "软著模板材料整理"
+  short_description: "先确认代码来源和是否合作开发，再按固定模板整理软著材料"
+  default_prompt: "Use $software-copyright-platform-workflow to confirm whether the filing code will be newly written, rewritten, or read from an existing project, confirm whether this is cooperation development and collect required cooperation fields if needed, then organize my software-copyright submission bundle using the bundled fixed PDF/DOCX/TXT template."
