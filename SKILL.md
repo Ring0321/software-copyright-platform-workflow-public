@@ -37,6 +37,9 @@ This public repository intentionally does not ship real filing templates, person
 - Treat the user's fixed PDF/DOCX template as already selected only when it exists in the local template folder or is supplied in the current task; do not substitute another template unless the user explicitly replaces it.
 - The current project and confirmed application fields are the content authority.
 - Reuse layout, hierarchy, density, tables, captions, headers, and fonts; never copy the earlier software's technical content as current content.
+- The generated software manual must reach at least 40 pages in the final exported PDF. Do not satisfy this by blank pages, enlarged spacing, oversized screenshots, duplicated paragraphs, or fake operations; expand only real project functions, real user workflows, real field meanings, validation rules, exceptions, outputs, roles, and maintenance operations.
+- Every function point and every operation step in the manual must be written in detailed ordinary-user language: explain purpose, applicable role, entry path, prerequisites, visible fields/buttons/statuses, exact user actions in order, field constraints, system feedback, exception prompts, downstream state changes, related screenshots, and handoff to the next workflow.
+- Manual tables must use black three-line tables: top border, header-bottom border, and bottom border only; no background fill, no vertical rules, and no internal horizontal rules unless the confirmed template explicitly requires otherwise.
 - Keep each registration and each formal iteration in a separate dated folder.
 - Use only complete, real source files selected from the confirmed project boundary.
 - If the registered program is under 60 pages, submit the complete selected program. Do not pad it to 60 pages.
@@ -154,7 +157,10 @@ Read the current project, existing user descriptions, screenshots, and confirmed
 
 - Match the template's chapter depth and paragraph density.
 - Use formal software-manual language.
-- Describe actual inputs, operations, decisions, outputs, and exceptions.
+- Describe actual inputs, operations, decisions, outputs, and exceptions in enough detail for a first-time business user to reproduce the workflow without additional explanation.
+- For every page or workflow, include the role that can operate it, where the user enters it, what the user sees before operation, what each field/button/status means, the exact operation sequence, validation and permission limits, success feedback, failure handling, and how the result affects later review, rectification, reporting, or archiving.
+- The draft manual must be planned and expanded for a final PDF length of at least 40 pages. If the page count is below 40 after DOCX/PDF generation, return to the Markdown draft and add genuine detail before delivering; do not change page size, insert blank pages, inflate images, or duplicate text merely to meet the target.
+- Use three-line tables for related documents, requirements, field explanations, status meanings, exception handling, role permissions, report outputs, and glossary tables. Three-line means only top, header-bottom, and bottom black rules.
 - Keep screenshots or diagrams in the same positions and proportions as the template.
 - When real screenshots are deferred, use neutral figure space and formal captions without visible drafting instructions.
 - Use PlantUML only when the template contains architecture or flow diagrams; size it for the template page.
@@ -199,6 +205,9 @@ Use [scripts/audit_source_submission.py](scripts/audit_source_submission.py) to 
 Run separate checks for:
 
 - template fidelity;
+- manual PDF page count is at least 40 pages, with no blank pages, duplicated filler, inflated spacing, or oversized screenshots used as padding;
+- manual tables render as black three-line tables rather than full grid tables;
+- operation chapters describe each step with role, entry, fields, user action, validation, feedback, exception handling, and downstream result;
 - software name/version consistency;
 - source-to-DOCX line equality;
 - source counts and page counts;
